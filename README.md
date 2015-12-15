@@ -1,4 +1,4 @@
-# ASP.NET 4 React.js Webpack Boilerplate
+# ASP.NET 5 React.js Webpack Boilerplate
 
 Boilerplate application that uses asp.net 5, Reactjs, webpack and webpack-dev-server
 
