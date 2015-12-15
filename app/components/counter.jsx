@@ -25,7 +25,7 @@ class Counter extends Component {
           Seconds since the component loaded: {this.state.secondsElapsed}
         </p>
         <p id="rerender">
-          Component has been rerender due to user changes: {this.rerender}
+          Component has been rerender : {this.rerender} times
         </p>
       </div>
     );
