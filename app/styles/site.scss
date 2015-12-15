@@ -1,3 +1,6 @@
+$time-bgcolor: green;
+$rerender-bgcolor: blue;
+
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -8,4 +11,14 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+#seconds {
+  background-color: $time-bgcolor;
+  color: white;
+}
+
+#rerender {
+  background-color: $rerender-bgcolor;
+  color: white;
 }
