@@ -1,14 +1,10 @@
-
-
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Webpack;
 
 namespace aspnet5_react_webpack_boilerplate
 {
@@ -30,6 +26,7 @@ namespace aspnet5_react_webpack_boilerplate
         {
             // Add framework services.
             services.AddMvc();
+            services.AddWebpack();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +38,14 @@ namespace aspnet5_react_webpack_boilerplate
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseWebpack(new WebpackOptions("app/index.js"){
+                    StylesTypes = new List<StylesType>(){
+                        StylesType.Sass
+                    },
+                    HandleJsxFiles = true,
+                    EnableHotLoading = true,
+                    DevServerOptions = new WebpackDevServerOptions("localhost", 50001)
+                });
             }
             else
             {
